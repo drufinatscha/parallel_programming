@@ -1,0 +1,29 @@
+slow from 1 to 8 threads:
+sum: 67108864, time: 1.2383 seconds
+sum: 67108864, time: 2.6658 seconds
+sum: 67108864, time: 6.4400 seconds
+sum: 67108864, time: 7.4122 seconds
+sum: 67108864, time: 6.8117 seconds
+sum: 67108864, time: 5.8774 seconds
+sum: 67108864, time: 6.7441 seconds
+sum: 67108864, time: 5.8843 seconds
+
+medium from 1 to 8 threads:
+sum: 67108864, time: 0.4429 seconds
+sum: 67108864, time: 1.1236 seconds
+sum: 67108864, time: 2.2607 seconds
+sum: 67108864, time: 2.1882 seconds
+sum: 67108864, time: 2.2950 seconds
+sum: 67108864, time: 2.2277 seconds
+sum: 67108864, time: 2.2316 seconds
+sum: 67108864, time: 2.2674 seconds
+
+fast from 1 to 8 threads:
+sum: 67108864, time: 0.1874 seconds
+sum: 67108864, time: 0.0977 seconds
+sum: 67108864, time: 0.0729 seconds
+sum: 67108864, time: 0.0640 seconds
+sum: 67108864, time: 0.0731 seconds
+sum: 67108864, time: 0.0675 seconds
+sum: 67108864, time: 0.0665 seconds
+sum: 67108864, time: 0.0707 seconds
