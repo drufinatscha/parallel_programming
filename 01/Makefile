@@ -1,17 +1,11 @@
-CFLAGS = -std=c11 -Wall -Wextra -Wpedantic -fopenmp
+CFLAGS = -Wall -Wextra -Werror -std=gnu11 -fopenmp
 
-.PHONY: all
+.PHONY: all clean
+
 all: slow medium fast
 
-.PHONY: clean
 clean:
-	$(RM) slow medium fast
+	rm slow medium fast
 
-slow: slow.c
-	$(CC) $(CFLAGS) -o $@ $^ #-lrt
-
-medium: medium.c
-	$(CC) $(CFLAGS) -o $@ $^ #-lrt
-
-fast: fast.c
-	$(CC) $(CFLAGS) -o $@ $^ #-lrt
+%: %.c
+	$(CC) $(CFLAGS) -o $@ $<
