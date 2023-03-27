@@ -13,4 +13,8 @@
 # Enforce exclusive node allocation, do not share with other jobs
 #SBATCH --exclusive
 
-/bin/hostname
+module load gcc/10.3.0
+
+make
+
+./mandelbrot
