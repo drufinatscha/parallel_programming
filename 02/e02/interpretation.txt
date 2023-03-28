@@ -1,0 +1,47 @@
+==6667== Command: ./implementation1
+==6667== 
+==6667== 
+==6667== I   refs:      19,329,206
+==6667== I1  misses:           957
+==6667== LLi misses:           953
+==6667== I1  miss rate:       0.00%
+==6667== LLi miss rate:       0.00%
+==6667== 
+==6667== D   refs:      11,125,379  (10,090,909 rd   + 1,034,470 wr)
+==6667== D1  misses:       191,839  (   128,560 rd   +    63,279 wr)
+==6667== LLd misses:       190,775  (   127,556 rd   +    63,219 wr)
+==6667== D1  miss rate:        1.7% (       1.3%     +       6.1%  )
+==6667== LLd miss rate:        1.7% (       1.3%     +       6.1%  )
+==6667== 
+==6667== LL refs:          192,796  (   129,517 rd   +    63,279 wr)
+==6667== LL misses:        191,728  (   128,509 rd   +    63,219 wr)
+==6667== LL miss rate:         0.6% (       0.4%     +       6.1%  )
+-----------------------------------------
+
+==7292== Command: ./implementation2
+==7292== 
+==7292== 
+==7292== I   refs:      19,329,206
+==7292== I1  misses:           957
+==7292== LLi misses:           953
+==7292== I1  miss rate:       0.00%
+==7292== LLi miss rate:       0.00%
+==7292== 
+==7292== D   refs:      11,125,379  (10,090,909 rd   + 1,034,470 wr)
+==7292== D1  misses:     3,004,336  ( 2,003,558 rd   + 1,000,778 wr)
+==7292== LLd misses:       192,272  (   128,554 rd   +    63,718 wr)
+==7292== D1  miss rate:       27.0% (      19.9%     +      96.7%  )
+==7292== LLd miss rate:        1.7% (       1.3%     +       6.2%  )
+==7292== 
+==7292== LL refs:        3,005,293  ( 2,004,515 rd   + 1,000,778 wr)
+==7292== LL misses:        193,225  (   129,507 rd   +    63,718 wr)
+==7292== LL miss rate:         0.6% (       0.4%     +       6.2%  )
+----------------------------------
+As we expected, implementation1 does way better in terms of cache-read misses.
+implementation1 has  128,560 rd misses
+implementation2 has 2,003,558 rd misses
+
+For implementation2 with N*N*2= 2000000 misses our assumption is quite solid. 
+For implementation1 we assumed that it is more efficient in terms of cache-misses, also this can be seen from our measurements.
+
+Also from our perf report we can see that the first implementation does way better.
