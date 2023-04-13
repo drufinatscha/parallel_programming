@@ -95,6 +95,7 @@ int main(int argc, char **argv) {
 		for (long i = 0; i < n; ++i) {
 			for (long j = 0; j < n; ++j) {
 				long sum;
+#pragma omp simd reduction(+:sum)
 				for (long k = 0; k < n; ++k) {
 					sum += a[i][k] * b[j][k];
 				}
