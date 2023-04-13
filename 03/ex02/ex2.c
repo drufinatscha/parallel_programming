@@ -84,7 +84,7 @@ int main(int argc, char **argv) {
 #pragma omp parallel for default(none) shared(n, a, b, c)
 		for (long i = 0; i < n; ++i) {
 			for (long j = 0; j < n; ++j) {
-				int sum;
+				long sum;
 				for (long k = 0; k < n; ++k) {
 					sum += a[i][k] * b[k][j];
 				}
