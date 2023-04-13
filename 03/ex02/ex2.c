@@ -82,7 +82,7 @@ int main(int argc, char **argv) {
 	{
 		// tranpose matrix b
 
-#pragma omp parallel for default(none) shared(b)
+#pragma omp parallel for default(none) shared(n, b)
 		for (long i = 0; i < n; ++i) {
 			for (long j = i + 1; j < n; ++j) {
 				int tmp = b[i][j];
