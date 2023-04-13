@@ -80,6 +80,16 @@ int main(int argc, char **argv) {
 	double start_time = omp_get_wtime();
 #pragma omp parallel default(none) shared(n, a, b, c, local_res)
 	{
+		// tranpose matrix b
+
+#pragma omp parallel for default(none) shared(b)
+		for (long i = 0; i < n; ++i) {
+			for (long j = i + 1; j < n; ++j) {
+				int tmp = b[i][j];
+				b[i][j] = b[j][i];
+				b[j][i] = tmp;
+			}
+		}
 		// matrix multiplication
 #pragma omp parallel for default(none) shared(n, a, b, c)
 		for (long i = 0; i < n; ++i) {
