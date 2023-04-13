@@ -101,6 +101,7 @@ int main(int argc, char **argv) {
 					sum += a[i][k] * b[j][k];
 				}
 				c[i][j] = sum;
+				local_sum += sum;
 			}
 		}
 #pragma omp atomic
