@@ -78,10 +78,10 @@ int main(int argc, char **argv) {
 	}
 
 	double start_time = omp_get_wtime();
-#pragma omp parallel default(none) shared(n, a, b, c, local_res)
+#pragma omp parallel default(none) shared(n, a, b, local_res) private(c)
 	{
 		// matrix multiplication
-#pragma omp parallel for default(none) shared(n, a, b, c)
+#pragma omp parallel for default(none) shared(n, a, b) private(c)
 		for (long i = 0; i < n; ++i) {
 			for (long j = 0; j < n; ++j) {
 				for (long k = 0; k < n; ++k) {
@@ -91,7 +91,7 @@ int main(int argc, char **argv) {
 		}
 
 		// sum of matrix c
-#pragma omp parallel for default(none) shared(n, a, b, c, local_res)
+#pragma omp parallel for default(none) shared(n, a, b, local_res) private(c)
 		for (long i = 0; i < n; ++i) {
 			for (long j = 0; j < n; ++j) {
 				local_res[omp_get_thread_num()] += c[i][j];
