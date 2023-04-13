@@ -82,7 +82,7 @@ int main(int argc, char **argv) {
 	{
 		// tranpose matrix b
 
-#pragma omp parallel for schedule(guided) shared(n, b)
+#pragma omp parallel for schedule(dynamic, 4) shared(n, b)
 		for (long i = 0; i < n; ++i) {
 			for (long j = i + 1; j < n; ++j) {
 				int tmp = b[i][j];
@@ -91,7 +91,7 @@ int main(int argc, char **argv) {
 			}
 		}
 		// matrix multiplication
-#pragma omp parallel for schedule(guided) shared(n, a, b, c)
+#pragma omp parallel for schedule(dynamic, 4) shared(n, a, b, c)
 		for (long i = 0; i < n; ++i) {
 			for (long j = 0; j < n; ++j) {
 				long sum;
@@ -104,7 +104,7 @@ int main(int argc, char **argv) {
 		}
 
 		// sum of matrix c
-#pragma omp parallel for schedule(guided) shared(n, a, b, c, local_res) 
+#pragma omp parallel for shared(n, a, b, c, local_res) 
 		for (long i = 0; i < n; ++i) {
 			for (long j = 0; j < n; ++j) {
 				local_res[omp_get_thread_num()] += c[i][j];
