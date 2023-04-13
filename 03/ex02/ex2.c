@@ -96,7 +96,7 @@ int main(int argc, char **argv) {
 			for (long j = 0; j < n; ++j) {
 				long sum;
 				for (long k = 0; k < n; ++k) {
-					sum += a[i][k] * b[k][j];
+					sum += a[i][k] * b[j][k];
 				}
 				c[i][j] = sum;
 			}
