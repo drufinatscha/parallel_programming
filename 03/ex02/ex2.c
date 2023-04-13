@@ -105,7 +105,7 @@ int main(int argc, char **argv) {
 		unsigned long res = 0;
 #pragma omp atomic
     	res += local_sum;
-
+	}
 		// sum of matrix c
 /*#pragma omp parallel for shared(n, a, b, c, local_res) 
 		for (long i = 0; i < n; ++i) {
