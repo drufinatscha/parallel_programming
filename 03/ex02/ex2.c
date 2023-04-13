@@ -78,7 +78,7 @@ int main(int argc, char **argv) {
 	}
 
 	double start_time = omp_get_wtime();
-#pragma omp parallel schedule(guided) shared(n, a, b, c, local_res)
+#pragma omp parallel shared(n, a, b, c, local_res)
 	{
 		// tranpose matrix b
 
