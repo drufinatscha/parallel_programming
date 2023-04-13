@@ -78,7 +78,8 @@ int main(int argc, char **argv) {
 	}
 
 	double start_time = omp_get_wtime();
-#pragma omp parallel shared(n, a, b, c, local_res)
+	unsigned long res = 0;
+#pragma omp parallel shared(n, a, b, c, res)
 	{
 		// tranpose matrix b
 #pragma omp parallel for schedule(dynamic, 4) shared(n, b)
@@ -102,7 +103,6 @@ int main(int argc, char **argv) {
 				c[i][j] = sum;
 			}
 		}
-		unsigned long res = 0;
 #pragma omp atomic
     	res += local_sum;
 	}
