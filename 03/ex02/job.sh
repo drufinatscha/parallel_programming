@@ -13,5 +13,14 @@
 # Enforce exclusive node allocation, do not share with other jobs
 #SBATCH --exclusive
 
-echo "1 Thread: "
-./ex2 1500
+OMP_NUM_THREADS=1 printf "1 Thread: "
+for i in {1..10}; do ./ex2 1500; done
+
+OMP_NUM_THREADS=2 printf "2 Threads: "
+for i in {1..10}; do ./ex2 1500; done
+
+OMP_NUM_THREADS=4 printf "4 Threads: "
+for i in {1..10}; do ./ex2 1500; done
+
+OMP_NUM_THREADS=8 printf "8 Threads: "
+for i in {1..10}; do ./ex2 1500; done
