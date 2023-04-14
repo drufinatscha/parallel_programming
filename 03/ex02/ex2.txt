@@ -1,1 +1,11 @@
 Are there any (performance) issues in the given code? Document your findings.
+- for loops in wrong order. Instead of i-j-k we should use i-k-j to use the cache.
+- the summation of result is not parallelized
+- no optimization flags while compiling the source code
+- ?omp parallel for slower than omp for?
+
+Optimized Runtime:
+1 Thread : 0,913
+2 Threads: 0,923
+4 Threads: 0,912
+8 Threads: 0,923

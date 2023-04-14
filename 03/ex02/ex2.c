@@ -78,7 +78,6 @@ int main(int argc, char **argv) {
 	}
 
 	double start_time = omp_get_wtime();
-	omp_set_num_threads(omp_get_max_threads());
 	unsigned long res = 0;
 	#pragma omp parallel shared(n, a, b, c)
 	{
