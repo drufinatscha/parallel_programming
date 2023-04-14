@@ -81,7 +81,6 @@ int main(int argc, char **argv) {
 	unsigned long res = 0;
 	#pragma omp parallel shared(n, a, b, c)
 	{
-		printf("Number of threads: %d\n", omp_get_num_threads());
 		// matrix multiplication
 		#pragma omp for
 		for (long i = 0; i < n; ++i) {
