@@ -14,13 +14,17 @@
 #SBATCH --exclusive
 
 OMP_NUM_THREADS=1 printf "1 Thread: "
-for i in {1..10}; do ./ex2 1500; done
+./ex2 1500
+#for i in {1..10}; do ./ex2 1500; done
 
 OMP_NUM_THREADS=2 printf "2 Threads: "
-for i in {1..10}; do ./ex2 1500; done
+./ex2 1500
+#for i in {1..10}; do ./ex2 1500; done
 
 OMP_NUM_THREADS=4 printf "4 Threads: "
-for i in {1..10}; do ./ex2 1500; done
+./ex2 1500
+#for i in {1..10}; do ./ex2 1500; done
 
 OMP_NUM_THREADS=8 printf "8 Threads: "
-for i in {1..10}; do ./ex2 1500; done
+./ex2 1500
+#for i in {1..10}; do ./ex2 1500; done
