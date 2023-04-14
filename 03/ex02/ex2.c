@@ -82,7 +82,7 @@ int main(int argc, char **argv) {
 	#pragma omp parallel shared(n, a, b, c)
 	{
 		// matrix multiplication
-		#pragma omp for
+		#pragma omp for collapse(2)
 		for (long i = 0; i < n; ++i) {
 			for (long k= 0; k < n; ++k) {
 				for (long j = 0; j < n; ++j) {
