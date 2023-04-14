@@ -13,8 +13,5 @@
 # Enforce exclusive node allocation, do not share with other jobs
 #SBATCH --exclusive
 
-module load gcc/10.3.0
-
-make
-
+echo "1 Thread: "
 ./ex2 1500

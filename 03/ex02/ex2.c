@@ -80,10 +80,10 @@ int main(int argc, char **argv) {
 	double start_time = omp_get_wtime();
 	omp_set_num_threads(omp_get_max_threads());
 	unsigned long res = 0;
-#pragma omp parallel shared(n, a, b, c)
+	#pragma omp parallel shared(n, a, b, c)
 	{
 		// matrix multiplication
-#pragma omp /*parallel*/ for //default(none) shared(n, a, b, c)
+		#pragma omp for
 		for (long i = 0; i < n; ++i) {
 			for (long k= 0; k < n; ++k) {
 				for (long j = 0; j < n; ++j) {
@@ -92,14 +92,14 @@ int main(int argc, char **argv) {
 			}
 		}
 
-				// sum of matrix c
-#pragma omp /*parallel*/ for //default(none) shared(n, a, b, c, local_res)
+		// sum of matrix c
+		#pragma omp for
 		for (long i = 0; i < n; ++i) {
 			for (long j = 0; j < n; ++j) {
 				local_res[omp_get_thread_num()] += c[i][j];
 			}
 		}
-#pragma omp for reduction(+:res)
+		#pragma omp for reduction(+:res)
 		for (int l = 0; l < omp_get_num_threads(); ++l) {
 			res += local_res[l];
 		}
