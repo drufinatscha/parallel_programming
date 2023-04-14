@@ -78,47 +78,32 @@ int main(int argc, char **argv) {
 	}
 
 	double start_time = omp_get_wtime();
+	omp_set_num_threads(omp_get_max_threads());
 	unsigned long res = 0;
-#pragma omp parallel shared(n, a, b, c, res)
+#pragma omp parallel shared(n, a, b, c)
 	{
-		// tranpose matrix b
-#pragma omp parallel for schedule(dynamic, 4) shared(n, b)
-		for (long i = 0; i < n; ++i) {
-			for (long j = i + 1; j < n; ++j) {
-				int tmp = b[i][j];
-				b[i][j] = b[j][i];
-				b[j][i] = tmp;
-			}
-		}
-		long local_sum = 0;
 		// matrix multiplication
-#pragma omp parallel for schedule(dynamic, 4) shared(n, a, b, c)
+#pragma omp /*parallel*/ for //default(none) shared(n, a, b, c)
 		for (long i = 0; i < n; ++i) {
-			for (long j = 0; j < n; ++j) {
-				long sum;
-#pragma omp simd reduction(+:sum)
-				for (long k = 0; k < n; ++k) {
-					sum += a[i][k] * b[j][k];
+			for (long k= 0; k < n; ++k) {
+				for (long j = 0; j < n; ++j) {
+					c[i][j] += a[i][k] * b[k][j];
 				}
-				c[i][j] = sum;
-				local_sum += sum;
 			}
 		}
-#pragma omp atomic
-    	res += local_sum;
-	}
-		// sum of matrix c
-/*#pragma omp parallel for shared(n, a, b, c, local_res) 
+
+				// sum of matrix c
+#pragma omp /*parallel*/ for //default(none) shared(n, a, b, c, local_res)
 		for (long i = 0; i < n; ++i) {
 			for (long j = 0; j < n; ++j) {
 				local_res[omp_get_thread_num()] += c[i][j];
 			}
 		}
+#pragma omp for reduction(+:res)
+		for (int l = 0; l < omp_get_num_threads(); ++l) {
+			res += local_res[l];
+		}
 	}
-	unsigned long res = 0;
-	for (int l = 0; l < omp_get_num_threads(); ++l) {
-		res += local_res[l];
-	}*/
 	double end_time = omp_get_wtime();
 	printf("res: %lu, time: %2.2f seconds\n", res, end_time - start_time);
 
