@@ -17,4 +17,4 @@ module load gcc/10.3.0
 
 make
 
-./ex2
+./ex2 1500
