@@ -4,8 +4,11 @@ Are there any (performance) issues in the given code? Document your findings.
 - no optimization flags while compiling the source code
 - ?omp parallel for slower than omp for?
 
+Original Runtime: 
+76.95 seconds
+
 Optimized Runtime:
-1 Thread : 0,913
-2 Threads: 0,923
-4 Threads: 0,912
-8 Threads: 0,923
+1 Thread : 0,913 seconds
+2 Threads: 0,923 seconds
+4 Threads: 0,912 seconds
+8 Threads: 0,923 seconds
