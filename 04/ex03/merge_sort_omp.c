@@ -45,6 +45,7 @@ void merge_sort(int *a, int length, int *temp){
     if(length == 1){
         return;
     }
+    // if length is smaller than threshold, use sequential merge sort
     if(length < THRESHOLD){
         merge_sort(a, length / 2, temp);
         merge_sort(a + length / 2, length - length / 2, temp + length / 2);
@@ -54,10 +55,10 @@ void merge_sort(int *a, int length, int *temp){
 
     int mid = length / 2;
 
-    #pragma omp task shared(a)  // create a task
+    #pragma omp task shared(a)  // create a task with the array a as a shared parameter
     merge_sort(a, mid, temp);
 
-    #pragma omp task shared(a) // create a task    
+    #pragma omp task shared(a) // create a task with the array a as a shared parameter
     merge_sort(a + mid, length - mid, temp + mid);
 
     #pragma omp taskwait
@@ -83,9 +84,9 @@ int main(int argc, char *argv[])
     }
 
     double start_time = omp_get_wtime();
-    #pragma omp parallel
+    #pragma omp parallel // create a parallel region to signal the start of parallel execution
     {
-        #pragma omp single
+        #pragma omp single // create a single thread
         {
             merge_sort(a, length, temp);
         }
