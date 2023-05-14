@@ -25,7 +25,7 @@ int main() {
     }
 
     double end_time = omp_get_wtime();
-    printf("Programm duration: %2.4f\n", end_time - start_time);
+    printf("%2.4f\n", end_time - start_time);
 
     // Output the results
     for (int i = 0; i < SIZE; ++i) {
