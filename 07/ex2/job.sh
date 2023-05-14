@@ -13,15 +13,4 @@
 # Enforce exclusive node allocation, do not share with other jobs
 #SBATCH --exclusive
 
-module load gcc/10.3.0
-
-make
-
-printf "\nfloat_seq\n"
-for i in {1..10}; do ./float_seq; done
-printf "\nfloat_omp\n"
-for i in {1..10}; do ./float_omp; done
-printf "\ndouble_seq\n"
-for i in {1..10}; do ./double_seq; done
-printf "\ndouble_omp\n"
-for i in {1..10}; do ./double_omp; done
+perf stat -e rC701 ./float_omp
