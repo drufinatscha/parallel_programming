@@ -1,0 +1,16 @@
+Makefile without optimization:
+CFLAGS = -Wall -Wextra -pedantic -std=c99 -fopenmp -O1
+ 
+Programm duration: 137.3417
+Programm duration: 137.3507
+Programm duration: 137.2656
+
+Makefile with outo optimization:
+CFLAGS = -Wall -Wextra -pedantic -std=c99 -fopenmp -O1 -ftree-vectorize
+Programm duration: 65.4159
+Programm duration: 65.3937
+Programm duration: 65.3981
+Programm duration: 65.4332
+
+
+
