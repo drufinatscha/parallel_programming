@@ -19,7 +19,7 @@ make
 
 printf "\nfloat_seq\n"
 for i in {1..10}; do ./float_seq; done
-printf "\n./float_omp\n"
+printf "\nfloat_omp\n"
 for i in {1..10}; do ./float_omp; done
 printf "\ndouble_seq\n"
 for i in {1..10}; do ./double_seq; done
