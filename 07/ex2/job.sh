@@ -13,9 +13,9 @@
 # Enforce exclusive node allocation, do not share with other jobs
 #SBATCH --exclusive
 
-perf stat -e rC701 ./float_omp
-perf stat -e rC702 ./float_omp
-perf stat -e rC704 ./float_omp
-perf stat -e rC708 ./float_omp
-perf stat -e rC710 ./float_omp
-perf stat -e rC71F ./float_omp
+perf stat -e r01C7 ./float_omp
+perf stat -e r02C7 ./float_omp
+perf stat -e r04C7 ./float_omp
+perf stat -e r08C7 ./float_omp
+perf stat -e r10C7 ./float_omp
+perf stat -e r1FC7 ./float_omp

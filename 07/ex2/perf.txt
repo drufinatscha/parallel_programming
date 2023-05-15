@@ -1,0 +1,71 @@
+0.6259
+
+ Performance counter stats for './float_omp':
+
+                 0      rC701:u
+
+       0.646762949 seconds time elapsed
+
+       0.626223000 seconds user
+       0.003001000 seconds sys
+
+
+0.6259
+
+ Performance counter stats for './float_omp':
+
+                11      rC702:u
+
+       0.635465431 seconds time elapsed
+
+       0.626413000 seconds user
+       0.002001000 seconds sys
+
+
+0.6259
+
+ Performance counter stats for './float_omp':
+
+            15,068      rC704:u
+
+       0.629340812 seconds time elapsed
+
+       0.625169000 seconds user
+       0.002996000 seconds sys
+
+
+0.6260
+
+ Performance counter stats for './float_omp':
+
+            52,236      rC708:u
+
+       0.629233697 seconds time elapsed
+
+       0.626371000 seconds user
+       0.002001000 seconds sys
+
+
+0.6259
+
+ Performance counter stats for './float_omp':
+
+     1,028,010,834      rC710:u
+
+       0.628817125 seconds time elapsed
+
+       0.626122000 seconds user
+       0.002000000 seconds sys
+
+
+0.6260
+
+ Performance counter stats for './float_omp':
+
+                 0      rC71F:u
+
+       0.629190598 seconds time elapsed
+
+       0.627311000 seconds user
+       0.001000000 seconds sys
+
