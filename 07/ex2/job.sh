@@ -14,8 +14,14 @@
 #SBATCH --exclusive
 
 perf stat -e r01C7 ./float_omp
+perf stat -e r01C7 ./float_seq
 perf stat -e r02C7 ./float_omp
+perf stat -e r02C7 ./float_seq
 perf stat -e r04C7 ./float_omp
+perf stat -e r04C7 ./float_seq
 perf stat -e r08C7 ./float_omp
+perf stat -e r08C7 ./float_seq
 perf stat -e r10C7 ./float_omp
+perf stat -e r10C7 ./float_seq
 perf stat -e r1FC7 ./float_omp
+perf stat -e r1FC7 ./float_seq

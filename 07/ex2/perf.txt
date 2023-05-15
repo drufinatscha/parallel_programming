@@ -2,70 +2,70 @@
 
  Performance counter stats for './float_omp':
 
-                 0      rC701:u
+     2,048,000,043      r01C7:u
 
-       0.646762949 seconds time elapsed
+       0.632383731 seconds time elapsed
 
-       0.626223000 seconds user
-       0.003001000 seconds sys
-
-
-0.6259
-
- Performance counter stats for './float_omp':
-
-                11      rC702:u
-
-       0.635465431 seconds time elapsed
-
-       0.626413000 seconds user
-       0.002001000 seconds sys
+       0.625861000 seconds user
+       0.003999000 seconds sys
 
 
 0.6259
 
  Performance counter stats for './float_omp':
 
-            15,068      rC704:u
+            10,242      r02C7:u
 
-       0.629340812 seconds time elapsed
+       0.628956580 seconds time elapsed
 
-       0.625169000 seconds user
-       0.002996000 seconds sys
-
-
-0.6260
-
- Performance counter stats for './float_omp':
-
-            52,236      rC708:u
-
-       0.629233697 seconds time elapsed
-
-       0.626371000 seconds user
-       0.002001000 seconds sys
+       0.626352000 seconds user
+       0.001997000 seconds sys
 
 
 0.6259
 
  Performance counter stats for './float_omp':
 
-     1,028,010,834      rC710:u
+                 0      r04C7:u
 
-       0.628817125 seconds time elapsed
+       0.629244095 seconds time elapsed
 
-       0.626122000 seconds user
+       0.627291000 seconds user
+       0.001000000 seconds sys
+
+
+0.6259
+
+ Performance counter stats for './float_omp':
+
+                56      r08C7:u
+
+       0.629300468 seconds time elapsed
+
+       0.626303000 seconds user
        0.002000000 seconds sys
 
 
+0.6259
+
+ Performance counter stats for './float_omp':
+
+               134      r10C7:u
+
+       1.031148275 seconds time elapsed
+
+       0.627405000 seconds user
+       0.001000000 seconds sys
+
+
 0.6260
 
  Performance counter stats for './float_omp':
 
-                 0      rC71F:u
+     2,048,010,431      r1FC7:u
 
-       0.629190598 seconds time elapsed
+       0.629419364 seconds time elapsed
 
-       0.627311000 seconds user
+       0.627468000 seconds user
        0.001000000 seconds sys
 
