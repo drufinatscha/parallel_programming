@@ -1,49 +1,108 @@
+float_omp: 2,048,000,043      r01C7:u
+float_seq:            43      r01C7:u
+
+float_omp:        10,242      r02C7:u
+float_seq: 8,192,010,242      r02C7:u
+
+float_omp: 2,048,010,431      r1FC7:u
+float_seq: 8,192,010,431      r1FC7:u
+
+Wenn das Programm mit OMP parallelisiert wurde, werden in etwa 1/4 der Instruktionen ausgeführt. Auch der Zeitaufwand ist auf etwa 1/4 der sequentiellen Zeit reduziert.
+
 0.6259
 
  Performance counter stats for './float_omp':
 
      2,048,000,043      r01C7:u
 
-       0.632383731 seconds time elapsed
+       0.631163512 seconds time elapsed
 
-       0.625861000 seconds user
-       0.003999000 seconds sys
+       0.628474000 seconds user
+       0.001002000 seconds sys
 
 
-0.6259
+2.4824
+
+ Performance counter stats for './float_seq':
+
+                43      r01C7:u
+
+       2.496956062 seconds time elapsed
+
+       2.483760000 seconds user
+       0.001000000 seconds sys
+
+
+0.6260
 
  Performance counter stats for './float_omp':
 
             10,242      r02C7:u
 
-       0.628956580 seconds time elapsed
+       0.628877795 seconds time elapsed
 
-       0.626352000 seconds user
-       0.001997000 seconds sys
+       0.625126000 seconds user
+       0.002995000 seconds sys
 
 
-0.6259
+2.4804
+
+ Performance counter stats for './float_seq':
+
+     8,192,010,242      r02C7:u
+
+       2.483420792 seconds time elapsed
+
+       2.480693000 seconds user
+       0.002000000 seconds sys
+
+
+0.6260
 
  Performance counter stats for './float_omp':
 
                  0      r04C7:u
 
-       0.629244095 seconds time elapsed
+       0.629448899 seconds time elapsed
 
-       0.627291000 seconds user
+       0.627005000 seconds user
        0.001000000 seconds sys
 
 
-0.6259
+2.4841
+
+ Performance counter stats for './float_seq':
+
+                 0      r04C7:u
+
+       2.487277430 seconds time elapsed
+
+       2.484372000 seconds user
+       0.001999000 seconds sys
+
+
+0.6262
 
  Performance counter stats for './float_omp':
 
                 56      r08C7:u
 
-       0.629300468 seconds time elapsed
+       0.629388386 seconds time elapsed
 
-       0.626303000 seconds user
-       0.002000000 seconds sys
+       0.626455000 seconds user
+       0.002001000 seconds sys
+
+
+2.4803
+
+ Performance counter stats for './float_seq':
+
+                56      r08C7:u
+
+       2.483465448 seconds time elapsed
+
+       2.480445000 seconds user
+       0.001999000 seconds sys
 
 
 0.6259
@@ -52,10 +111,22 @@
 
                134      r10C7:u
 
-       1.031148275 seconds time elapsed
+       0.628822933 seconds time elapsed
 
-       0.627405000 seconds user
-       0.001000000 seconds sys
+       0.626917000 seconds user
+       0.000999000 seconds sys
+
+
+2.4802
+
+ Performance counter stats for './float_seq':
+
+               134      r10C7:u
+
+       2.483336448 seconds time elapsed
+
+       2.480499000 seconds user
+       0.001998000 seconds sys
 
 
 0.6260
@@ -64,8 +135,19 @@
 
      2,048,010,431      r1FC7:u
 
-       0.629419364 seconds time elapsed
+       0.628944475 seconds time elapsed
 
-       0.627468000 seconds user
-       0.001000000 seconds sys
+       0.628058000 seconds user
+       0.000000000 seconds sys
 
+
+2.4808
+
+ Performance counter stats for './float_seq':
+
+     8,192,010,431      r1FC7:u
+
+       2.483547679 seconds time elapsed
+
+       2.481936000 seconds user
+       0.000999000 seconds sys
